@@ -1,0 +1,12 @@
+
+<h1>Users</h1>
+current: <%= current_user.email %>
+
+<% @users.each do |user| %>
+   <li> <%= user.email %></li>
+   <%= form_with model: @request do |form| %>
+    <%= hidden_field_tag :recipient_id, user.id %>
+    <%= form.submit "Send Friend request" %>
+   <% end %>
+
+<% end %>
