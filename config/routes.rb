@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "users#index"
+  root "posts#index"
   resources :friend_requests do
     member do
       get 'accept'
