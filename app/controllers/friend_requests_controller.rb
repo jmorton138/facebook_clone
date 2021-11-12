@@ -2,6 +2,8 @@ class FriendRequestsController < ApplicationController
 
     def index
         @requests = FriendRequest.where(recipient_id: current_user.id, pending: true)
+
+        @friends = current_user.followers
     end
 
     def create
@@ -16,7 +18,17 @@ class FriendRequestsController < ApplicationController
     def accept
         @request = FriendRequest.find(params[:id])
         @request.pending = false
+        @request.save
         # create friend association
+        @requester = User.find(@request.sender_id)
+        followed = Friendship.new(follower_id: @request.sender_id, followee_id: current_user.id)
+        following = Friendship.new(follower_id: current_user.id, followee_id: @request.sender_id)
+        if followed.save && following.save
+            redirect_to friend_requests_path
+        else
+            render :friend_requests_path
+        end
+        
     end
 
     def reject
