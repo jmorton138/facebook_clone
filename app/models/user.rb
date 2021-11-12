@@ -10,6 +10,9 @@ class User < ApplicationRecord
   has_many :followee_friendships, class_name: "Friendship", foreign_key: :follower_id
   has_many :followees, class_name: "User", through: :followee_friendships, source: :followee
 
+
+  has_many :authored_posts, class_name: "Post", foreign_key: :author_id, dependent: :destroy
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end

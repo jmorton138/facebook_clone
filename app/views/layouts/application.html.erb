@@ -12,11 +12,21 @@
 
   <body>
   <nav>
+    <div>
     <% if current_user %>
-      <% if @requests.count > 0 %>
-        <div><%= @requests.count %></div>
+      notifications
+        <% if @requests.count > 0 %>
+          <%= @requests.count %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+    <div>
+      <%= link_to 'Profile' %>
+    </div>
+    <div>
+      <%= link_to 'sign out', destroy_user_session_path, method: :delete %>
+    </div>
+
   </nav>
     <%= yield %>
   </body>
