@@ -2,4 +2,8 @@
 
 <% @posts.each do |post| %>
     <%= post.body %>
+    <%= form_with url: "/posts/#{post.id}/likes/", method: :post do |form| %>
+        <%= submit_tag "like post" %>
+    <% end %>
+    <%= post.likes.count %> likes
 <% end %>
