@@ -11,6 +11,13 @@
   </head>
 
   <body>
+  <nav>
+    <% if current_user %>
+      <% if @requests.count > 0 %>
+        <div><%= @requests.count %></div>
+      <% end %>
+    <% end %>
+  </nav>
     <%= yield %>
   </body>
 </html>
