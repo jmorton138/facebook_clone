@@ -13,6 +13,16 @@
             <% end %>
         <% end %>
         <%= post.likes.count %> likes
+        <ul>
+            <% post.comments.each do |comment| %>
+                <li><%= comment.body %></li>
+            <% end %>
+        </ul>
+        <%= form_with model: @comment do |form| %>
+            <%= hidden_field_tag :post_id, post.id %>
+            <%= form.text_field :body %>
+            <%= submit_tag "Leave Comment" %>
+        <% end %>
     </div>
 <% end %>
 
