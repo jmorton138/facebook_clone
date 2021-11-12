@@ -13,6 +13,7 @@ class User < ApplicationRecord
 
   has_many :authored_posts, class_name: "Post", foreign_key: :author_id, dependent: :destroy
 
+  has_many :likes, foreign_key: :liker_id
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
