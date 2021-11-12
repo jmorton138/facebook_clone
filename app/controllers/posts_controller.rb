@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
     def index
         @like = Like.new
+        @likes = current_user.likes
         @posts = Post.all
         @post = Post.new
         @requests = FriendRequest.where(recipient_id: current_user.id, pending: true)
