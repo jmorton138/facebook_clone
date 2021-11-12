@@ -10,3 +10,4 @@ current: <%= current_user.email %>
    <% end %>
 
 <% end %>
+<%= link_to 'sign out', destroy_user_session_path, method: :delete %>

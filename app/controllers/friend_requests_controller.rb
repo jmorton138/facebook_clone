@@ -1,7 +1,7 @@
 class FriendRequestsController < ApplicationController
 
     def index
-        # @requests = FriendRequest.where(recipient: current_user)
+        @requests = FriendRequest.where(recipient_id: current_user.id, pending: true)
     end
 
     def create
@@ -11,6 +11,19 @@ class FriendRequestsController < ApplicationController
             redirect_to root_path
         end
 
+    end
+
+    def accept
+        @request = FriendRequest.find(params[:id])
+        @request.pending = false
+        # create friend association
+    end
+
+    def reject
+        @request = FriendRequest.find(params[:id])
+        @request.pending = false
+        @request.save
+        redirect_to friend_requests_path
     end
 
     private

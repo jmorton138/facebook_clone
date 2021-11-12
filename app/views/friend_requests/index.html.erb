@@ -1,0 +1,7 @@
+<h1>requests</h1>
+
+<% @requests.each do |r| %>
+    <%= r.sender_id %>
+    <%= link_to 'Accept request', accept_friend_request_path(r.id) %>
+    <%= link_to 'Reject request', reject_friend_request_path(r.id) %>
+<% end %>
