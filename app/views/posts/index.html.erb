@@ -1,8 +1,10 @@
+current user: <%= current_user.email %>
 <%= render "form" %>
 
 <% @posts.each do |post| %>
     <div>
         <%= post.body %>
+        Author: <%= User.find(post.author_id).email %>
         <% if @likes.where(post_id: post.id).exists? == true %>
             <%= form_with url: post_like_path(post.id, @likes.where(post_id: post.id)[0].id), method: :delete do |form| %>
                 <%= submit_tag "unlike post" %>
@@ -28,4 +30,3 @@
         <% end %>
     </div>
 <% end %>
-
