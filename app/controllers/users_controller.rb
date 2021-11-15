@@ -3,11 +3,11 @@ class UsersController < ApplicationController
     def index
 
         @friends = current_user.followers
-       
-        #@requests = FriendRequest.where(sender_id: current_user.id, pending: true)
-        @requests = current_user.sent_requests.where(pending: true)
+        @requests = FriendRequest.where(recipient_id: current_user.id, pending: true)
+        @sent_requests = current_user.sent_requests.where(pending: true)
+        @received_requests = current_user.received_requests.where(pending: true)
         @users = User.all.map do |user|
-            user unless current_user.followers.include?(user) || @requests.where(recipient_id: user.id).exists? || user == current_user 
+            user unless current_user.followers.include?(user) || @sent_requests.where(recipient_id: user.id).exists? || @received_requests.where(sender_id: user.id).exists? ||user == current_user 
         end
         @users= @users.compact
         # @request = FriendRequest.new
