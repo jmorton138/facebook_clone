@@ -1,4 +1,8 @@
 <%= @user.email %>
-<%= image_tag(@user.avatar) if @user.avatar.attached? %>
+<%= image_tag(@user.avatar, style:'width:20%') if @user.avatar.attached? %>
 <%= link_to "Edit profile", edit_user_path(@user.id) %>
+
+<% @posts.each do |post| %>
+    <%= post.body %>
+<% end %>
 
