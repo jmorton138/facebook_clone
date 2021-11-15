@@ -14,6 +14,9 @@ class User < ApplicationRecord
   has_many :authored_posts, class_name: "Post", foreign_key: :author_id, dependent: :destroy
 
   has_many :likes, foreign_key: :liker_id
+
+  has_one_attached :avatar
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
