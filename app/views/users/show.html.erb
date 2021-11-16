@@ -6,3 +6,4 @@
     <%= post.body %>
 <% end %>
 
+<%= link_to "Cancel my account", registration_path(current_user), data: { confirm: "Are you sure?" }, method: :delete %>
