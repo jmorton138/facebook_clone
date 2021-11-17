@@ -8,27 +8,35 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/ed6bc2265d.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-  <nav>
+  <nav id="nav-bar">
     <div>
-    <% if current_user %>
-      notifications
+      <ul>
+      <li>
+        <%= link_to "Home", root_path %>
+      </li>
+      <% if current_user %>
+        <li>
         <% if @requests.count > 0 %>
-          <%= @requests.count %>
+          <%= link_to "Notifications: #{@requests.count}" %>
+        <% else %>
+          <%= link_to "Notifications" %>
         <% end %>
-    
+        </li>
+        <li>
+          <%= link_to 'Profile', user_path(current_user.id) %>
+        </li>
+        <li id="sign-out">
+          <%= link_to 'sign out', destroy_user_session_path, method: :delete %>
+        </li>
+      <% end %>
+    </ul>
     </div>
-    <div>
-      <%= link_to 'Profile', user_path(current_user.id) %>
-    </div>
-    <div>
-      <%= link_to 'sign out', destroy_user_session_path, method: :delete %>
-    </div>
-    <% end %>
+
   </nav>
-  <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, method: :post %>
 
     <%= yield %>
   </body>

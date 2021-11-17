@@ -1,32 +1,52 @@
-current user: <%= current_user.email %>
 <%= render "form" %>
 
 <% @posts.each do |post| %>
-    <div>
-        <%= post.body %>
-        Author: <%= User.find(post.author_id).email %>
-        <% if @likes.where(post_id: post.id).exists? == true %>
-            <%= form_with url: post_like_path(post.id, @likes.where(post_id: post.id)[0].id), method: :delete do |form| %>
-                <%= submit_tag "unlike post" %>
-            <% end %> 
-        <% else %>
-            <%= form_with url: "/posts/#{post.id}/likes/", method: :post do |form| %>
-                <%= submit_tag "like post" %>
-            <% end %>
-        <% end %>
-        <%= post.likes.count %> likes
-        <ul>
-            <% post.comments.each do |comment| %>
-                <li><%= comment.body %></li>
-                <% if current_user.id == comment.commenter_id %>
-                    <%= link_to "Delete comment", comment_path(comment.id), method: :delete %>
+    <div class="post">
+        <div class="post-content">
+
+            <div class="post-author">
+                Author: <%= User.find(post.author_id).email %>
+            </div>
+
+            <div class="post-body">
+                <%= post.body %>
+            </div>
+            <hr>
+            <div class="like-count">
+                <%= post.likes.count %> likes
+            </div>
+            <hr>
+        </div>
+
+        <div class="like-form">
+            <% if @likes.where(post_id: post.id).exists? == true %>
+                <%= form_with url: post_like_path(post.id, @likes.where(post_id: post.id)[0].id), method: :delete do |form| %>
+                    <%= submit_tag "unlike post" %>
+                <% end %> 
+            <% else %>
+                <%= form_with url: "/posts/#{post.id}/likes/", method: :post do |form| %>
+                    <%= submit_tag "like post" %>
                 <% end %>
             <% end %>
+        </div>
+ 
+        <ul class="comments">
+            <% post.comments.each do |comment| %>
+                <div class="comment">
+                    <div class="comment-body"><p><b><%= User.find(comment.commenter_id).email %></b>: <%= comment.body %></p></div>
+                    <div>
+                    <% if current_user.id == comment.commenter_id %>
+                        <%= link_to "Delete comment", comment_path(comment.id), method: :delete, class: "delete-com" %>
+                    <% end %>
+                    </div>
+                </div>
+            <% end %>
         </ul>
-        <%= form_with model: @comment do |form| %>
+
+        <%= form_with model: @comment, class: "comment-form" do |form| %>
             <%= hidden_field_tag :post_id, post.id %>
             <%= form.text_field :body %>
-            <%= submit_tag "Leave Comment" %>
+            <%= submit_tag "Save Comment" %>
         <% end %>
     </div>
 <% end %>
