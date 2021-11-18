@@ -1,5 +1,13 @@
 <%= form_with model: @post, id: "new-post" do |form| %>
     <%= form.text_area :body %>
-    <%= form.file_field :photo %>
+
+    <div class="img-upload">
+    <label >
+        Upload new image
+        <span style="display:none;">
+            <%= form.file_field :photo %>
+        </span>
+    </label>
+    </div>
     <%= submit_tag "Post" %>
 <% end %>
