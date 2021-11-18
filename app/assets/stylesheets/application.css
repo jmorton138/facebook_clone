@@ -35,12 +35,13 @@ body {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 18px;
     text-decoration: none;
   }
   
   li a:hover {
     background-color: #111;
+
   }
 
   #nav-bar {
@@ -49,6 +50,7 @@ body {
 
   #sign-out {
       float: right;
+      font-size: 16px;
   }
 
   footer {

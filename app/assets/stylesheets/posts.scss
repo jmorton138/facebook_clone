@@ -12,6 +12,15 @@
     background-color: azure;
     box-shadow: 5px 5px 5px grey;
 
+    input[type=submit] {
+        background-color: black;
+        color: white;
+    }
+
+    input[type=submit]:hover {
+        background-color: blue;
+    }
+
 
 }
 
