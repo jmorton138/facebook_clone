@@ -2,7 +2,8 @@ class PostsController < ApplicationController
 
     def index
         @like = Like.new
-        @likes = current_user.likes
+        #@likes = current_user.likes
+        @likes = Like.all
         @comment = Comment.new
         @post = Post.new
         @posts = current_user.followees.map do |friend|

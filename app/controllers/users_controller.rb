@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
     
     def index
-
         @friends = current_user.followers
         @requests = FriendRequest.where(recipient_id: current_user.id, pending: true)
         @sent_requests = current_user.sent_requests.where(pending: true)
@@ -14,6 +13,7 @@ class UsersController < ApplicationController
     end
 
     def show
+        @likes = Like.all
         @user = current_user
         @posts = Post.where(author_id: params[:id])
         @requests = FriendRequest.where(recipient_id: current_user.id, pending: true)

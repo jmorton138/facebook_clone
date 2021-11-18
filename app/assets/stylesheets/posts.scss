@@ -43,22 +43,27 @@ hr {
     background-color: rgb(231, 224, 224);
 }
 
-.comment-form input[type=text] {
-    border-radius: 20px;
-    width: 70%;
-    padding: 5px 10px;
-    margin-top: 15px;
+.comment-form {
 
+    input[type=text] {
+        border-radius: 20px;
+        width: 70%;
+        padding: 5px 10px;
+        margin-top: 15px;
+
+    }
+
+    input[type=submit] {
+        background-color: black;
+        color: white;
+        border-radius: 18px;
+        border: none;
+        padding: 7px 9px;
+        margin-left: 5px;
+    }
 }
 
-.comment-form input[type=submit] {
-    background-color: black;
-    color: white;
-    border-radius: 18px;
-    border: none;
-    padding: 7px 9px;
-    margin-left: 5px;
-}
+
 
 .comment {
     padding: 10px;
@@ -81,3 +86,37 @@ hr {
     margin-bottom: 2px;
     
 }
+
+#new-post {
+    margin: auto;
+    width: 60%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    
+    textarea {
+        height: 120px;
+        width: 100%;
+        border-radius: 10px;
+        margin: auto;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        padding-left: 8px;
+        padding-top: 7px;
+
+        
+    }
+    input[type=submit] {
+        margin: auto;
+        background-color: black;
+        color: white;
+        border-radius: 18px;
+        border: none;
+        padding: 10px;
+        width: 100%;
+    }
+
+
+}
+
+

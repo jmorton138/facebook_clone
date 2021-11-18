@@ -1,9 +1,17 @@
-<%= @user.email %>
-<%= image_tag(@user.avatar, style:'width:20%') if @user.avatar.attached? %>
-<%= link_to "Edit profile", edit_user_path(@user.id) %>
+<div class="user-info">
+    <div>
+        Email: <%= @user.email %>
+    </div>
+    <div class="img">
+        <%= image_tag(@user.avatar, style:'width:20%') if @user.avatar.attached? %>
+    </div>
 
-<% @posts.each do |post| %>
-    <%= post.body %>
-<% end %>
+    <div class="edit">
+        <%= link_to "Edit profile", edit_user_path(@user.id) %>
+    </div>
+</div>
 
-<%= link_to "Cancel my account", registration_path(current_user), data: { confirm: "Are you sure?" }, method: :delete %>
+
+<%= render partial: "posts/posts" %>
+
+

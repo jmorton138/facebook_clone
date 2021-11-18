@@ -1,3 +1,80 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+#friend-suggestions {
+    margin: 20px;
+    .friend-suggest {
+        font-weight: bold;
+        div {
+            display: inline-block;
+            margin-right: 3px;
+            margin-top: 6px;
+        }
+    }
+
+
+}
+
+.user-info {
+    float: left;
+    padding: 20px;
+    margin-top: 30px;
+    width: 17%;
+    border: 1px solid rgb(104, 238, 238);
+    border-radius: 5px;
+    background-color: azure;
+    box-shadow: 5px 5px 5px grey;
+    div {
+        margin: 5px;
+    }
+}
+.edit {
+    a {
+        margin-top: 0px;
+        color: rgb(88, 87, 87);
+        font-weight: bold;
+        text-decoration: none;
+
+    }
+}
+#edit {
+    padding: 30px;
+    margin: auto;
+    margin-top: 50px;
+    width: 50%;
+    border: 1px solid rgb(104, 238, 238);
+    border-radius: 5px;
+    background-color: azure;
+    box-shadow: 5px 5px 5px grey; 
+    div  {
+        margin: auto;
+        padding: 10px;
+    } 
+}
+form {
+    input[type=submit] {
+        background-color: black;
+        color: white;
+        border-radius: 18px;
+        border: none;
+        padding: 7px 9px;
+        margin-top: 20px;
+        display: block;
+    }
+
+}
+
+#cancel {
+    a {
+        margin-top: 0px;
+        font-size: 12px;
+        color: grey;
+    }
+}
+
+
+h1 {
+    margin: 20px;
+}
+

@@ -1,15 +1,18 @@
 
 <h1>Users</h1>
-current: <%= current_user.email %>
+<div id="friend-suggestions">
    <% @users.each do |user| %>
-
-         <li> <%= user.email %></li>
+      <div class="friend-suggest">
+         <div> <%= user.email %></div>
+         <div>
             <%= form_with url: friend_requests_path(current_user.id), method: :post do |form| %>
-            <%= hidden_field_tag :recipient_id, user.id %>
-            <%= form.submit "Send Friend request" %>
+               <%= hidden_field_tag :recipient_id, user.id %>
+               <%= form.submit "Send Friend request" %>
             <% end %>
-
+         </div>
+      </div>
    <% end %>
+</div>
 
 
 

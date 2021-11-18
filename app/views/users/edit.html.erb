@@ -1,4 +1,19 @@
-<%= form_with model: @user do |form| %>
-    <%= form.file_field :avatar %>
-    <%= submit_tag "Save changes" %>
-<% end %>
+<div id="edit">
+    <div>
+        <b>Email:</b> <%= @user.email %>
+    </div>
+    <div>
+        <b>Upload profile picture:</b>
+    </div>
+    <div class="img-upload">
+        
+        <%= form_with model: @user do |form| %>
+            <%= form.file_field :avatar %>
+            <%= submit_tag "Save changes" %>
+        <% end %>
+    </div>
+    <div id="cancel">
+        <%= link_to "Cancel my account", registration_path(current_user), data: { confirm: "Are you sure?" }, method: :delete %>
+    </div>
+
+</div>
