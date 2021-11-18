@@ -9,6 +9,9 @@
             <div class="post-body">
                 <%= post.body %>
             </div>
+            <div>
+                <%= image_tag(post.photo, style:'width:100%') if post.photo.attached? %>
+            </div>
             <hr>
             <div class="like-count">
                 <%= post.likes.count %> likes

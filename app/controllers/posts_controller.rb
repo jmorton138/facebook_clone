@@ -9,10 +9,10 @@ class PostsController < ApplicationController
         @posts = current_user.followees.map do |friend|
             friend.authored_posts
         end
-        @posts = @posts.compact.flatten
         Post.where(author_id: current_user.id).each do |post|
             @posts << post
         end
+        @posts = @posts.compact.flatten.sort_by(&:created_at).reverse
         @requests = FriendRequest.where(recipient_id: current_user.id, pending: true)
     end
 
