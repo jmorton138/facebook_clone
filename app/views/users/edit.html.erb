@@ -8,7 +8,7 @@
     <div class="img-upload">
         
         <%= form_with model: @user do |form| %>
-            <%= form.file_field :avatar %>
+            <%= form.file_field :avatar, direct_upload: true %>
             <%= submit_tag "Save changes" %>
         <% end %>
     </div>
