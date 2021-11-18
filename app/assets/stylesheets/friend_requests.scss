@@ -1,3 +1,48 @@
 // Place all the styles related to the FriendRequests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.frnd-request {
+    margin: 20px;
+    .user {
+        display: inline-block;
+        margin-right: 3px;
+        margin-top: 6px;
+    }
+    .reject {
+        background-color: rgb(138, 36, 36);
+        
+    }
+
+    a {
+        margin: auto;
+        background-color: black;
+        color: white;
+        border-radius: 18px;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        text-decoration: none;
+        .reject {
+            background-color: cadetblue;
+            
+        }
+    }
+
+    a:hover {
+        background-color: blue;
+        text-decoration: none;
+    }
+}
+
+.friends {
+    margin: 20px;
+    .user {
+        display: inline-block;
+        margin-right: 3px;
+        margin-top: 6px;
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+}

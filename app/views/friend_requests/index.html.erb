@@ -1,16 +1,24 @@
 <h1>Pending Friend Requests</h1>
 
 <% @requests.each do |requester| %>
-    user id: <%= requester.sender_id %>
-    request id: <%= requester.id %>
-    <%= link_to 'Accept request', accept_friend_request_path(requester.id) %>
-    <%= link_to 'Reject request', reject_friend_request_path(requester.id) %>
+    <div class="frnd-request">
+        <div class="user">
+            <%= User.where(id: requester.id)[0].email %>
+        </div>
+        <%= link_to 'Accept request', accept_friend_request_path(requester.id) %>
+        <%= link_to 'Reject request', reject_friend_request_path(requester.id), class: "reject" %>
+    </div>
 <% end %>
 <%= @requester %>
 
-
-<h1>Friends</h1>
-
-<% @friends.each do |f| %>
-    <%= f.email %>
+<% if @friends.length > 0 %>
+    <h1>Friends</h1>
+    <div class="friends">
+        <% @friends.each do |f| %>
+            <div class="user">
+                <%= link_to f.email, user_path(f.id) %>
+            </div>
+        <% end %>
+    </div>
 <% end %>
+
