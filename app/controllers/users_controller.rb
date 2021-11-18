@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
     def show
         @likes = Like.all
-        @user = current_user
+        @user = User.find(params[:id])
         @posts = Post.where(author_id: params[:id]).order(created_at: :desc)
         @requests = FriendRequest.where(recipient_id: current_user.id, pending: true)
 

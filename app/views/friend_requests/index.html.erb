@@ -9,7 +9,11 @@
         <%= link_to 'Reject request', reject_friend_request_path(requester.id), class: "reject" %>
     </div>
 <% end %>
-<%= @requester %>
+<% if @requests.length == 0 %>
+    <div class="no-rqst">
+        No new friend requests
+    </div>
+<% end %>
 
 <% if @friends.length > 0 %>
     <h1>Friends</h1>
