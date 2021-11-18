@@ -66,3 +66,19 @@ body {
   .nots {
     font-size: 6px;
   }
+
+  .fa-stack[data-count]:after{
+    position:absolute;
+    right:0%;
+    content: attr(data-count);
+    font-size: 40%;
+    padding:.5em;
+    border-radius:999px;
+    line-height:1em;
+    color: white;
+    background: blue;
+    text-align:center;
+    min-width:1em;
+    font-weight:bold;
+    top: 3px;
+  }

@@ -21,7 +21,9 @@
       <% if current_user %>
         <li>
         <% if @requests.count > 0 %>
-          <%= link_to " ", class: "fas fa-flag" %> <div class="nots"><%= @requests.count %></div>
+        <span class="fa-stack" data-count="<%= @requests.count %>">
+          <%= link_to " ", friend_requests_path, class: "fas fa-flag" %>
+        </span>
         <% else %>
           <%= link_to " ", friend_requests_path, class: "fas fa-flag" %>
           
