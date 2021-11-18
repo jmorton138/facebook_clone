@@ -1,4 +1,5 @@
 <%= form_with model: @post, id: "new-post" do |form| %>
     <%= form.text_area :body %>
+    <%= form.file_field :photo %>
     <%= submit_tag "Post" %>
 <% end %>
