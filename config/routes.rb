@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   end
   resources :comments, only: [:create, :destroy]
 
-  resources :users
+  resources :users, :path => 'u'
 
-  devise_for :users,:path => 'u', controllers: { omniauth_callbacks: 'omniauth_callbacks', registrations: "my_registrations" }
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: "my_registrations" }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
