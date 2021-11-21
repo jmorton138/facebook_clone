@@ -61,6 +61,6 @@ gem "devise", "~> 4.8"
 gem "figaro"
 gem 'omniauth-rails_csrf_protection'
 gem 'cloudinary'
-
+gem 'carrierwave'
 
 gem "letter_opener", group: :development
