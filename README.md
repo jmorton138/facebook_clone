@@ -1,25 +1,3 @@
-# README
+# Facebook Clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+This is the final project for the Odin Project's Ruby on Rails course. The objective of this project was to create a web application that mimicked some of Facebook's core functationality like friend requests, user profiles, posting, commenting, and liking. Another aspect was using omniauth to allow users to create their account and sign in through Facebook. You can view the project's full assignment here: https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/rails-final-project.
