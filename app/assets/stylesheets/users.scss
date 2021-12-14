@@ -17,10 +17,12 @@
 }
 
 .user-info {
-    float: left;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
     padding: 20px;
-    margin-top: 30px;
-    width: 17%;
+    margin-top: 0px;
     border: 1px solid rgb(104, 238, 238);
     border-radius: 5px;
     background-color: azure;
@@ -28,7 +30,23 @@
     div {
         margin: 5px;
     }
+    img {
+        height: 300px;
+        border-radius: 50%;
+    }
+    
 }
+
+@media (max-width: 600px) {
+    .user-info {
+        img {
+            height: 200px;
+        }
+    }
+}
+
+
+
 .edit {
     a {
         margin-top: 0px;
@@ -53,6 +71,8 @@
     } 
 }
 form {
+    display: grid;
+    grid-template-columns: 1fr;
     input[type=submit] {
         background-color: black;
         color: white;
@@ -60,7 +80,7 @@ form {
         border: none;
         padding: 7px 9px;
         margin-top: 20px;
-        display: block;
+        width: 50%;
     }
 
 }

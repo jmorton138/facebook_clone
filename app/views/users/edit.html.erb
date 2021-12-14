@@ -5,7 +5,7 @@
     <div>
         <b>Upload profile picture:</b>
     </div>
-    <div class="img-upload">
+    <div>
         
         <%= form_with model: @user do |form| %>
             <%= form.file_field :avatar, direct_upload: true %>

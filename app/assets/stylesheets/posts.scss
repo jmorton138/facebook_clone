@@ -24,6 +24,12 @@
 
 }
 
+@media (max-width: 750px) {
+    .post {
+        width: 95%;
+    }
+}
+
 .post-content {
     margin-bottom: 5px;
 }
