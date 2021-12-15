@@ -85,25 +85,25 @@ body {
     font-weight:bold;
     top: 3px;
   }
-  #login-form {
+  .devise-form {
     margin: auto;
     margin-left: 35%;
     width: 50%;
   }
-  #login-form form {
+  .devise-form form {
     display: grid;
     grid-template-columns: minmax(300px, 1fr);
     margin: 10px 0px;
 
   }
 
-  #login-form form input {
+  .devise-form form input {
     width: 60%;
 
 
   }
  
-  #login-form form input[type=checkbox] {
+  .devise-form form input[type=checkbox] {
     width: 5%;
     margin: 0px;
     transform: scale(2);
@@ -131,13 +131,13 @@ body {
   }
 
   @media (max-width: 600px) {
-    #login-form {
+    .devise-form {
       width: 90%;
       margin-left: auto;
 
     }
 
-    #login-form form input {
+    .devise-form form input {
       width: 80%;
       border: 1px solid rgb(58, 57, 57);
       border-radius: 3px;
@@ -150,7 +150,7 @@ body {
     .sign-in-btns a {
       width: 80%;
     }
-    #login-form form input[type=checkbox] {
+    .devise-form form input[type=checkbox] {
       width: 5%;
     }
 
