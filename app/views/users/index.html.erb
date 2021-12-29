@@ -1,6 +1,6 @@
 
-<h1>Users</h1>
 <div id="friend-suggestions">
+   <h1>Friend Suggestions</h1>
    <% @users.each do |user| %>
       <div class="friend-suggest">
          <div> <%= user.email %></div>
@@ -12,6 +12,19 @@
          </div>
       </div>
    <% end %>
+</div>
+
+<div class="friends-list">
+    <% if @friends.length > 0 %>
+        <h1>Friends</h1>
+        <div class="friends">
+            <% @friends.each do |f| %>
+                <div class="user">
+                    <%= link_to f.email, user_path(f.id) %>
+                </div>
+            <% end %>
+        </div>
+    <% end %>
 </div>
 
 

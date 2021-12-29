@@ -4,7 +4,7 @@
             <%= image_tag(@user.avatar, style:'width:50%') if @user.avatar.attached? %>
         </div>
         <div>
-            Email: <%= @user.email %>
+            <%= @user.email %>
         </div>
         <% if current_user == @user %>
         <div class="edit">

@@ -16,6 +16,11 @@
 /* * {
   border: 1px solid red;
 } */
+
+* {
+  font-weight: 400;
+
+}
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
@@ -160,4 +165,34 @@ body {
 
 
 
+
+.post-author {
+  font-size: medium;
+}
+
+.post-body {
+  font-size: medium;
+}
+
+.save-com {
+  width: 30% !important;
+}
+
+.like-post {
+  width: 15% !important;
+}
+
+.user-info {
+  width: 400px;
+  margin: auto;
+  float: left;
+}
+
+@media (max-width: 1800px) {
+  .user-info {
+    float:none;
+    width: 49%;
+    margin: auto;
+  }
+}
 

@@ -24,11 +24,11 @@
         <div class="like-form">
             <% if @likes.where(post_id: post.id).exists? == true %>
                 <%= form_with url: post_like_path(post.id, @likes.where(post_id: post.id)[0].id), method: :delete do |form| %>
-                    <%= submit_tag "unlike post" %>
+                    <%= submit_tag "unlike post", class: "like-post" %>
                 <% end %> 
             <% else %>
                 <%= form_with url: "/posts/#{post.id}/likes/", method: :post do |form| %>
-                    <%= submit_tag "like post" %>
+                    <%= submit_tag "like post", class: "like-post" %>
                 <% end %>
             <% end %>
         </div>
@@ -49,7 +49,7 @@
         <%= form_with model: @comment, class: "comment-form" do |form| %>
             <%= hidden_field_tag :post_id, post.id %>
             <%= form.text_field :body %>
-            <%= submit_tag "Save Comment" %>
+            <%= submit_tag "Save Comment", class: "save-com" %>
         <% end %>
     </div>
 <% end %>
