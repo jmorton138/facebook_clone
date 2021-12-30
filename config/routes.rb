@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   resources :users, :path => 'u'
 
+  get "/pages/:page" => "static_pages#show"
+
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: "my_registrations" }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
