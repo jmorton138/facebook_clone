@@ -3,7 +3,7 @@
    <h1>Friend Suggestions</h1>
    <% @users.each do |user| %>
       <div class="friend-suggest">
-         <div> <%= user.email %></div>
+         <div class="email"> <%= user.email %></div>
          <div class="rqst-container">
             <%= form_with url: friend_requests_path(current_user.id), method: :post do |form| %>
                <%= hidden_field_tag :recipient_id, user.id %>

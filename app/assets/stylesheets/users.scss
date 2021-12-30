@@ -6,10 +6,30 @@
     margin: 20px;
     .friend-suggest {
         font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+
+        .email {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+
+        }
+
         div {
             display: inline-block;
             margin-right: 3px;
-            margin-top: 6px;
+        }
+        .rqst-container {
+            float: right;
+            margin: 0;
+            padding-top: 4px;
+
+            input[type=submit] {
+                margin: 0;
+            }
+
         }
     }
 
@@ -37,16 +57,50 @@
     
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
     .user-info {
-        img {
-            height: 200px;
-        }
+        width: 100%;
+  
     }
+    
+    
 }
 
 
+@media (max-width: 1000px) {
+    #friend-suggestions {
+        .friend-suggest {
+            font-weight: bold;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 17px;
 
+    
+            div {
+                display: block;
+                margin: 0;
+                padding: 0;
+                .frnd-add-btn {
+                    margin: 0;
+                    margin-bottom: 15px;
+                }
+            }
+            .rqst-container {
+                float: none;
+                padding: 0;
+            }
+            .email {
+                padding: 0;
+                margin:0;
+            }
+    
+            
+        }
+
+
+    }
+    
+}
 .edit {
     a {
         margin-top: 0px;

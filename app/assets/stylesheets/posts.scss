@@ -26,6 +26,25 @@
 @media (max-width: 750px) {
     .post {
         width: 95%;
+
+    }
+    #new-post {
+        width: 99% !important;
+    }
+    .like-form  {
+        input[type=submit] {
+            width: 30% !important;
+
+        }
+        
+    }
+
+    .comment-form {
+        input[type=submit] {
+            width: 40% !important;
+
+
+        }
     }
 }
 

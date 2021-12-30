@@ -191,8 +191,16 @@ body {
 @media (max-width: 1800px) {
   .user-info {
     float:none;
-    width: 49%;
+    width: 51%;
     margin: auto;
   }
 }
 
+@media (max-width: 750px) {
+  .user-info {
+      width: 99%;
+
+  }
+  
+  
+}
