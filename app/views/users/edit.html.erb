@@ -9,7 +9,7 @@
         
         <%= form_with model: @user do |form| %>
             <%= form.file_field :avatar, direct_upload: true %>
-            <%= submit_tag "Save changes", class: "save-edits" %>
+            <%= submit_tag "Save changes", id: "save-edits" %>
         <% end %>
     </div>
     <div id="cancel">
