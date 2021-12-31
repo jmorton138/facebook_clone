@@ -101,8 +101,9 @@ hr {
 
 
 .comment {
-    padding: 10px;
-    font-size: 12px;
+    padding: 20px;
+    padding-top: 10px;
+    font-size: 17px;
     background-color: rgb(175, 211, 211);
 }
 
@@ -116,7 +117,7 @@ hr {
 }
 
 .delete-com {
-    font-size: 9px;
+    font-size: 12px;
     color: rgb(94, 93, 93);
     margin-bottom: 2px;
     
@@ -173,3 +174,8 @@ hr {
 .img-upload:hover {
     background-color: rgb(42, 42, 124);
 }
+
+b {
+    font-weight: 700;
+}
+

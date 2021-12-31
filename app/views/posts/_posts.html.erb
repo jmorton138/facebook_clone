@@ -36,9 +36,9 @@
                 <div class="comment">
                     <div class="comment-body"><p><b><%= User.find(comment.commenter_id).email %></b>: <%= comment.body %></p></div>
                     <div>
-                    <% if current_user.id == comment.commenter_id %>
-                        <%= link_to "Delete comment", comment_path(comment.id), method: :delete, class: "delete-com" %>
-                    <% end %>
+                        <% if current_user.id == comment.commenter_id %>
+                            <%= link_to "Delete comment", comment_path(comment.id), method: :delete, class: "delete-com" %>
+                        <% end %>
                     </div>
                 </div>
             <% end %>
